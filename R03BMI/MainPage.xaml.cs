@@ -18,10 +18,18 @@ namespace R03BMI
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            double weight, height, BMI;
-            weight = double.Parse(weighit.Text);
-            height = double.Parse(heighit.Text);
-            BMI = (weight / (height * height));
+            double w, h, BMI;
+            h= double.Parse(heighit.Text);
+            w = double.Parse(weighit.Text);
+            if (h > 3)
+            {
+                h = h /100;
+            }
+            if (w > 3)
+            {
+                w = w / 100;
+            }
+            BMI = (w / (h * h));
             result.Text = "BMI値l =" + BMI.ToString();
         }
     }
