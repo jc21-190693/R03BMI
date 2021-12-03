@@ -25,7 +25,7 @@ namespace R03BMI
              {
                 h.Handled = true;
              }
-            if((w < '0' || '9' < w)
+            if(w < '0' || '9' < w)
              {
                 w.Handled = true;
              }
