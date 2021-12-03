@@ -24,7 +24,6 @@ namespace R03BMI
              // ここで NumberFormatExceptionが投げられる可能性がある
                 h= double.Parse(heighit.Text);
                 w = double.Parse(weighit.Text);
-
                 if (h > 3)
                 {
                     h = h /100;
@@ -33,10 +32,10 @@ namespace R03BMI
                 {
                      w = w / 100;
                 }
-            BMI = Math.Round(1,5);
             BMI = (w / (h * h));
+            BMI = Math.Round(1,5);
             result.Text = "BMI値l =" + BMI;
-        } catch (NumberFormatException e)
+        } catch (FormatException e)
             {
     // NumberFormatExceptionが投げられたらここで捕まえる．
     result.Text =（"数字を入力してください。");
