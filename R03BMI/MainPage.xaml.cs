@@ -21,23 +21,23 @@ namespace R03BMI
             double w, h, BMI;
             try 
             {
-             // ここで NumberFormatExceptionが投げられる可能性がある
                 h= double.Parse(heighit.Text);
-                w = double.Parse(weighit.Text);
                 if (h > 3)
                 {
                     h = h /100;
                 }
+                 w = double.Parse(weighit.Text);
                 if (w > 1000)
                 {
                      w = w / 100;
                 }
-            BMI = (w / (h * h));
-            BMI = Math.Round(1,5);
-            result.Text = "BMI値 =" + BMI;
-        } catch (FormatException ex)
-            {
-             // NumberFormatExceptionが投げられたらここで捕まえる．
-            result.Text =（"数字を入力してください。");
-             }
+                BMI = (w / (h * h));
+                BMI = Math.Round(1,5);
+                result.Text = "BMI値 =" + BMI;
+            }catch (FormatException ex){
+                 // NumberFormatExceptionが投げられたらここで捕まえる．
+                result.Text =（"数字を入力してください。");
+            }
+        }
+    }
 }
