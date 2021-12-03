@@ -21,11 +21,11 @@ namespace R03BMI
             double w, h, BMI;
             h= double.Parse(heighit.Text);
             w = double.Parse(weighit.Text);
-            if((h.KeyChar < '0' || '9' < h.KeyChar) && h.KeyChar != '\b')
+            if(h < '0' || '9' < h) 
              {
                 h.Handled = true;
              }
-            if((w.KeyChar < '0' || '9' < w.KeyChar) && w.KeyChar != '\b')
+            if((w < '0' || '9' < w)
              {
                 w.Handled = true;
              }
