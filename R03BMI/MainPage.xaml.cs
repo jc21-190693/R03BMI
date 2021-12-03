@@ -34,10 +34,10 @@ namespace R03BMI
                 }
             BMI = (w / (h * h));
             BMI = Math.Round(1,5);
-            result.Text = "BMI値l =" + BMI;
-        } catch (FormatException e)
+            result.Text = "BMI値 =" + BMI;
+        } catch (FormatException ex)
             {
-    // NumberFormatExceptionが投げられたらここで捕まえる．
-    result.Text =（"数字を入力してください。");
-    }
+             // NumberFormatExceptionが投げられたらここで捕まえる．
+            result.Text =（"数字を入力してください。");
+             }
 }
