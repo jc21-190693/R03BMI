@@ -29,7 +29,7 @@ namespace R03BMI
                  w = double.Parse(weighit.Text);
                 if (w > 1000)
                 {
-                     w = w / 100;
+                     w = w / 1000;
                 }
                 bmi = (w / (h * h));
                 bmi = Math.Round(bmi, 1, MidpointRounding.AwayFromZero);
