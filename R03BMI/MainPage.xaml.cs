@@ -37,6 +37,7 @@ namespace R03BMI
             }catch (FormatException ex){
                  // FormatExceptionが投げられたらここで捕まえる．
                 result.Text =（"数字を入力してください。");
+
             }
         }
     }
