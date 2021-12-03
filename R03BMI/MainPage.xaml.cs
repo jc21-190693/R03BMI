@@ -32,11 +32,11 @@ namespace R03BMI
                      w = w / 100;
                 }
                 bmi = (w / (h * h));
-                bmi = Math.Round(2,5);
+                bmi = Math.Round(bmi, 1, MidpointRounding.AwayFromZero);
                 result.Text = "BMI値 =" + bmi;
             }catch (FormatException ex){
                  // FormatExceptionが投げられたらここで捕まえる．
-                result.Text =（"数字を入力してください。");
+                result.Text =("数字を入力してください。");
 
             }
         }
