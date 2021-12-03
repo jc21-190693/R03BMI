@@ -25,11 +25,12 @@ namespace R03BMI
             {
                 h = h /100;
             }
-            if (w > 3)
+            if (w > 1000)
             {
                 w = w / 100;
             }
             BMI = (w / (h * h));
+
             result.Text = "BMI値l =" + BMI.ToString();
         }
     }
