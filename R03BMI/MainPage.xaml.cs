@@ -19,7 +19,8 @@ namespace R03BMI
         private void Button_Clicked(object sender, EventArgs e)
         {
             double w, h, BMI;
-            try {
+            try 
+            {
              // ここで NumberFormatExceptionが投げられる可能性がある
                 h= double.Parse(heighit.Text);
                 w = double.Parse(weighit.Text);
@@ -32,10 +33,11 @@ namespace R03BMI
                 {
                      w = w / 100;
                 }
+            BMI = Math.Round(1,5);
             BMI = (w / (h * h));
-
-            result.Text = "BMI値l =" + BMI.ToString();
-        } catch (NumberFormatException e) {
+            result.Text = "BMI値l =" + BMI;
+        } catch (NumberFormatException e)
+            {
     // NumberFormatExceptionが投げられたらここで捕まえる．
     result.Text =（"数字を入力してください。");
     }
