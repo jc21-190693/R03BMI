@@ -19,27 +19,24 @@ namespace R03BMI
         private void Button_Clicked(object sender, EventArgs e)
         {
             double w, h, BMI;
-            h= double.Parse(heighit.Text);
-            w = double.Parse(weighit.Text);
-            if(h < '0' || '9' < h) 
-             {
-                h.Handled = true;
-             }
-            if(w < '0' || '9' < w)
-             {
-                w.Handled = true;
-             }
-            if (h > 3)
-            {
-                h = h /100;
-            }
-            if (w > 1000)
-            {
-                w = w / 100;
-            }
+            try {
+             // ここで NumberFormatExceptionが投げられる可能性がある
+                h= double.Parse(heighit.Text);
+                w = double.Parse(weighit.Text);
+
+                if (h > 3)
+                {
+                    h = h /100;
+                }
+                if (w > 1000)
+                {
+                     w = w / 100;
+                }
             BMI = (w / (h * h));
 
             result.Text = "BMI値l =" + BMI.ToString();
-        }
+        } catch (NumberFormatException e) {
+    // NumberFormatExceptionが投げられたらここで捕まえる．
+    result.Text =（"数字を入力してください。");
     }
 }
